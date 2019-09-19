@@ -1,7 +1,7 @@
-package impl.moves;
+package eu.lidovydum.riddle4j.impl.moves;
 
-import impl.MySituation;
-import lib.Move;
+import eu.lidovydum.riddle4j.impl.MySituation;
+import eu.lidovydum.riddle4j.lib.Move;
 
 public class MyMove implements Move<MySituation> {
 

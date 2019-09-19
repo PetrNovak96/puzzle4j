@@ -1,4 +1,4 @@
-package lib;
+package eu.lidovydum.riddle4j.lib;
 
 public interface Rule<T extends Situation> {
 
