@@ -9,6 +9,10 @@ public class KozaVlk implements Rule<RekaSituace> {
 
     public boolean suitsRule(RekaSituace staraSituace, Move move) {
         RekaSituace novaSituace = (RekaSituace) move.apply(staraSituace);
-        return !(novaSituace.getKoza().equals(novaSituace.getVlk()) && !novaSituace.getKoza().equals(novaSituace.getSedlak()));
+        //System.out.print("\nnová situace:\n"+novaSituace);
+        boolean vyhovuje = !(novaSituace.getKoza().equals(novaSituace.getVlk()) && !novaSituace.getKoza().equals(novaSituace.getSedlak()));
+        //System.out.print("\nvyhovuje:\n"+ vyhovuje);
+        //System.out.println();
+        return vyhovuje;
     }
 }

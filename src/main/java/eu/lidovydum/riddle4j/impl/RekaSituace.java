@@ -52,4 +52,9 @@ public class RekaSituace extends Situation {
     public void setVlk(String vlk) {
         this.vlk = vlk;
     }
+
+    @Override
+    public String toString() {
+        return "sedlak: " + sedlak + " koza: " + koza + " vlk: " + vlk + " zeli: " + zeli;
+    }
 }

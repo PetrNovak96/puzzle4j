@@ -59,13 +59,12 @@ class Solver<T extends Situation>{
                     newSituation.setPrevious(situation);
                     situation.addFollowing(newSituation);
                     if(!added) {
-                        situations.add((T) move.apply(situation));
+                        situations.add(newSituation);
                         added = true;
                     }
                 }
             }
         }
-        System.out.println(situations.size());
         return situations;
     }
 }

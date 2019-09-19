@@ -13,11 +13,12 @@ public class Application {
         KozaVlkZeli kozaVlkZeli = new KozaVlkZeli();
         List<Situation> found = kozaVlkZeli.solve();
         for (Situation situation : found) {
-            RekaSituace rekaSituace = (RekaSituace) situation;
-            System.out.println(rekaSituace.getZeli());
-            System.out.println(rekaSituace.getSedlak());
-            System.out.println(rekaSituace.getKoza());
-            System.out.println(rekaSituace.getVlk());
+
+            RekaSituace rekaSituace = (RekaSituace) situation.getPrevious();
+            while(rekaSituace != null) {
+                System.out.println(rekaSituace);
+                rekaSituace = (RekaSituace) rekaSituace.getPrevious();
+            }
         }
     }
 }
