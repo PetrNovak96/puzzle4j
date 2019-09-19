@@ -8,52 +8,64 @@ class Solver<T extends Situation>{
 
     private List<T> open = new ArrayList<T>();
     private List<T> closed = new ArrayList<T>();
-    private Iterable<Move<T>> moves;
-    private Iterable<Rule<T>> rules;
+    private Iterable<Move> moves;
+    private Iterable<Rule> rules;
     private T current;
     private boolean success;
 
-    void solve(T initialSituation,
+    List<T> solve(T initialSituation,
                Iterable<T> successSituations,
-               Iterable<Move<T>> moves,
-               Iterable<Rule<T>> rules) {
+               Iterable<Move> moves,
+               Iterable<Rule> rules) {
         this.moves = moves;
+        this.rules = rules;
         this.closed.add(initialSituation);
         this.success = false;
+        List<T> foundSituations = new ArrayList<T>();
 
         while(!this.success) {
             if (this.closed.isEmpty()) {
-                this.success = false;
+                System.out.println("is empty");
                 break;
             } else {
-                this.current = this.closed.get(0);
+                this.current = this.closed.remove(0);
                 // uloží na konec
                 this.closed.addAll(this.open(current));
                 for (T situation : this.closed) {
-                    //TODO algoritmus není správně
+                    boolean isGoal = false;
                     for(T successSituation: successSituations) {
                         if (situation.isEqual(successSituation)) {
-                            this.success = true;
+                            isGoal = true;
                             break;
                         }
+                    }
+                    if (isGoal) {
+                        foundSituations.add(situation);
+                        this.success = true;
                     }
                 }
             }
         }
+        return foundSituations;
     }
 
     private List<T> open(T situation) {
         List<T> situations = new ArrayList<T>();
-        for (Move<T> move: this.moves) {
-            for (Rule<T> rule: this.rules) {
+        for (Move move: this.moves) {
+            boolean added = false;
+            for (Rule rule: this.rules) {
                 if (rule.suitsRule(situation, move)) {
-                    T newSituation = move.apply(situation);
+                    T newSituation = (T) move.apply(situation);
                     newSituation.setPrevious(situation);
                     situation.addFollowing(newSituation);
-                    situations.add(move.apply(situation));
+                    if(!added) {
+                        situations.add((T) move.apply(situation));
+                        added = true;
+                    }
                 }
             }
         }
+        System.out.println(situations.size());
         return situations;
     }
 }

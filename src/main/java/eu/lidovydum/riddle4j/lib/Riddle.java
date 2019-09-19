@@ -1,33 +1,31 @@
 package eu.lidovydum.riddle4j.lib;
 
 
-import eu.lidovydum.riddle4j.impl.MySituation;
+import java.util.List;
+import java.util.Set;
 
 public abstract class Riddle<T extends Situation> {
 
-    private Situation initialSituation;
-    private Iterable<? extends Situation> successSituations;
-    private Iterable<Move> moves;
-    private Iterable<Rule> rules;
-    private Solver solver;
+    private T initialSituation;
+    private Iterable<T> successSituations;
+    private Set<Move> moves;
+    private Set<Rule> rules;
+    private Solver<T> solver;
+    private Reflection<T> reflection;
 
     public Riddle() {
         this.solver = new Solver<T>();
+        this.reflection = new Reflection<T>();
         this.initialSituation = initialSituation();
         this.successSituations = successSituations();
-        this.moves = Reflection.getMoves();
-        this.rules = Reflection.getRules();
+        this.rules = this.reflection.getRules();
+        this.moves = this.reflection.getMoves();
     }
 
-    public Iterable<Situation> findFollowing(Situation situation) {
-        //TODO find following situations
-        return null;
+    public List<Situation> solve() {
+        return (List<Situation>) this.solver.solve(initialSituation, successSituations, moves, rules);
     }
 
-    public void solve() {
-        this.solver.solve(initialSituation, successSituations, moves, rules);
-    }
-
-    protected abstract Situation initialSituation();
-    protected abstract Iterable<? extends Situation> successSituations();
+    protected abstract T initialSituation();
+    protected abstract Iterable<T> successSituations();
 }
