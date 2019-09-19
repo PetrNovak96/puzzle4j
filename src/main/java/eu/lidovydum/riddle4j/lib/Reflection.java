@@ -5,11 +5,11 @@ import org.reflections.Reflections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Reflection {
+class Reflection {
 
     private static Reflections reflections = new Reflections("eu.lidovydum.riddle4j");
 
-    public static Set<Rule> getRules() {
+    static Set<Rule> getRules() {
         Set<Class<? extends Rule>> ruleClasses = reflections.getSubTypesOf(Rule.class);
         Set<Rule> rules = new HashSet<Rule>();
         for (Class ruleClass : ruleClasses) {
@@ -24,7 +24,7 @@ public class Reflection {
         return rules;
     }
 
-    public static Set<Move> getMoves() {
+    static Set<Move> getMoves() {
         Set<Class<? extends Move>> moveClasses = reflections.getSubTypesOf(Move.class);
         Set<Move> moves = new HashSet<Move>();
         for (Class moveClass : moveClasses) {

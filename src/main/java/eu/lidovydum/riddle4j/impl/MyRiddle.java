@@ -5,7 +5,7 @@ import eu.lidovydum.riddle4j.lib.Situation;
 
 import java.util.ArrayList;
 
-public class MyRiddle extends Riddle {
+public class MyRiddle extends Riddle<MySituation> {
 
     protected Situation initialSituation() {
         return new MySituation();

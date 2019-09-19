@@ -7,6 +7,6 @@ public class Application {
 
     public static void main(String[] args) {
         MyRiddle myRiddle = new MyRiddle();
-        myRiddle.init();
+        myRiddle.solve();
     }
 }
