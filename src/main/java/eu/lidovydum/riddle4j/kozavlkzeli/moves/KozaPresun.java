@@ -1,6 +1,6 @@
-package eu.lidovydum.riddle4j.impl.moves;
+package eu.lidovydum.riddle4j.kozavlkzeli.moves;
 
-import eu.lidovydum.riddle4j.impl.RekaSituace;
+import eu.lidovydum.riddle4j.kozavlkzeli.RekaSituace;
 
 public class KozaPresun extends Presun {
 

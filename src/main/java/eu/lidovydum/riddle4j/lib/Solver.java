@@ -14,7 +14,6 @@ class Solver<T extends Situation>{
     private boolean success;
 
     List<T> solve(T initialSituation,
-               Iterable<T> successSituations,
                Iterable<Move> moves,
                Iterable<Rule> rules) {
         this.moves = moves;
@@ -32,14 +31,7 @@ class Solver<T extends Situation>{
                 // uloží na konec
                 this.closed.addAll(this.open(current));
                 for (T situation : this.closed) {
-                    boolean isGoal = false;
-                    for(T successSituation: successSituations) {
-                        if (situation.isEqual(successSituation)) {
-                            isGoal = true;
-                            break;
-                        }
-                    }
-                    if (isGoal) {
+                    if (situation.isGoalSituation()) {
                         foundSituations.add(situation);
                         this.success = true;
                     }
@@ -52,17 +44,15 @@ class Solver<T extends Situation>{
     private List<T> open(T situation) {
         List<T> situations = new ArrayList<T>();
         for (Move move: this.moves) {
-            boolean added = false;
+            boolean suits = true;
             for (Rule rule: this.rules) {
-                if (rule.suitsRule(situation, move)) {
-                    T newSituation = (T) move.apply(situation);
-                    newSituation.setPrevious(situation);
-                    situation.addFollowing(newSituation);
-                    if(!added) {
-                        situations.add(newSituation);
-                        added = true;
-                    }
-                }
+                if (!rule.suitsRule(situation, move))  suits = false;
+            }
+            if(suits) {
+                T newSituation = (T) move.apply(situation);
+                newSituation.setPrevious(situation);
+                situation.addFollowing(newSituation);
+                situations.add(newSituation);
             }
         }
         return situations;

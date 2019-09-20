@@ -1,4 +1,4 @@
-package eu.lidovydum.riddle4j.impl;
+package eu.lidovydum.riddle4j.kozavlkzeli;
 
 import eu.lidovydum.riddle4j.lib.Situation;
 
@@ -19,6 +19,10 @@ public class RekaSituace extends Situation {
     public boolean isEqual(Situation situation) {
         RekaSituace situace = (RekaSituace) situation;
         return this.koza.equals(situace.koza) && this.sedlak.equals(situace.sedlak) && this.zeli.equals(situace.zeli) && this.vlk.equals(situace.vlk);
+    }
+
+    public boolean isGoalSituation() {
+        return this.koza.equals("P") && this.sedlak.equals("P") && this.zeli.equals("P") && this.vlk.equals("P");
     }
 
     public String getSedlak() {

@@ -7,7 +7,8 @@ import java.util.Set;
 
 class Reflection<T extends Situation> {
 
-    private static Reflections reflections = new Reflections("eu.lidovydum.riddle4j");
+    //tady se ještě musí přepínat, chce to refaktoraci, soukromý atribut Riddlu
+    private static Reflections reflections = new Reflections("eu.lidovydum.riddle4j.becky");
 
     Set<Rule> getRules() {
         Set<Class<? extends Rule>> ruleClasses = reflections.getSubTypesOf(Rule.class);

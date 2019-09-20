@@ -29,4 +29,6 @@ public abstract class Situation {
     }
 
     public abstract boolean isEqual(Situation situation);
+
+    public abstract boolean isGoalSituation();
 }

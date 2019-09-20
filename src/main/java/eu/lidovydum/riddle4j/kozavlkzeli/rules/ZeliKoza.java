@@ -1,6 +1,6 @@
-package eu.lidovydum.riddle4j.impl.rules;
+package eu.lidovydum.riddle4j.kozavlkzeli.rules;
 
-import eu.lidovydum.riddle4j.impl.RekaSituace;
+import eu.lidovydum.riddle4j.kozavlkzeli.RekaSituace;
 import eu.lidovydum.riddle4j.lib.Move;
 import eu.lidovydum.riddle4j.lib.Rule;
 
