@@ -25,6 +25,7 @@ public class RekaSituace extends Situation {
         return this.koza.equals("P") && this.sedlak.equals("P") && this.zeli.equals("P") && this.vlk.equals("P");
     }
 
+
     public String getSedlak() {
         return sedlak;
     }

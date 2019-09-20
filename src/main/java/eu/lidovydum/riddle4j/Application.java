@@ -12,9 +12,11 @@ public class Application {
 
     public static void main(String[] args) {
         becky();
+        koza();
     }
 
     private static void becky() {
+        System.out.println("___BEČKY___\n");
         Becky becky = new Becky();
         List<Situation> found = becky.solve();
         for (Situation situation : found) {
@@ -25,9 +27,11 @@ public class Application {
                 previous = previous.getPrevious();
             }
         }
+        System.out.println();
     }
 
     private static void koza() {
+        System.out.println("___KOZA VLK ZELI___\n");
         KozaVlkZeli kozaVlkZeli = new KozaVlkZeli();
         List<Situation> found = kozaVlkZeli.solve();
         for (Situation situation : found) {
@@ -38,5 +42,6 @@ public class Application {
                 rekaSituace = (RekaSituace) rekaSituace.getPrevious();
             }
         }
+        System.out.println();
     }
 }

@@ -10,14 +10,12 @@ public abstract class Riddle<T extends Situation> {
     private Set<Move> moves;
     private Set<Rule> rules;
     private Solver<T> solver;
-    private Reflection<T> reflection;
 
     public Riddle() {
         this.solver = new Solver<T>();
-        this.reflection = new Reflection<T>();
         this.initialSituation = initialSituation();
-        this.rules = this.reflection.getRules();
-        this.moves = this.reflection.getMoves();
+        this.rules = this.rules();
+        this.moves = this.moves();
     }
 
     public List<Situation> solve() {
@@ -25,4 +23,7 @@ public abstract class Riddle<T extends Situation> {
     }
 
     protected abstract T initialSituation();
+
+    protected abstract Set<Move> moves();
+    protected abstract Set<Rule> rules();
 }
