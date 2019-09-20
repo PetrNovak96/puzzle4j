@@ -8,6 +8,8 @@ import java.util.Set;
 class Reflection<T extends Situation> {
 
     //tady se ještě musí přepínat, chce to refaktoraci, soukromý atribut Riddlu
+    //navíc bez reflexe to bude flexibilnější, do
+    // riddlu se budou muset pridat instance pohybů a pravidel manuálně
     private static Reflections reflections = new Reflections("eu.lidovydum.riddle4j.becky");
 
     Set<Rule> getRules() {
