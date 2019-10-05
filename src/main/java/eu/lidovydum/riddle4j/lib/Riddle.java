@@ -18,8 +18,8 @@ public abstract class Riddle<T extends Situation> {
         this.moves = this.moves();
     }
 
-    public List<Situation> solve() {
-        return (List<Situation>) this.solver.solve(initialSituation, moves, rules);
+    public List<T> solve() {
+        return this.solver.solve(initialSituation, moves, rules);
     }
 
     protected abstract T initialSituation();

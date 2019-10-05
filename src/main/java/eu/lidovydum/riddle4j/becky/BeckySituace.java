@@ -2,6 +2,8 @@ package eu.lidovydum.riddle4j.becky;
 
 import eu.lidovydum.riddle4j.lib.Situation;
 
+import java.util.Arrays;
+
 public class BeckySituace extends Situation {
 
     private int[] becky = new int[3];
@@ -31,7 +33,15 @@ public class BeckySituace extends Situation {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BeckySituace situace = (BeckySituace) o;
+        return Arrays.equals(getBecky(), situace.getBecky());
+    }
+
+    @Override
     public String toString() {
-        return becky[0] + " " + becky[1] + " " + becky[2];
+        return becky[0] + "" + becky[1] + "" + becky[2];
     }
 }

@@ -23,10 +23,8 @@ class Solver<T extends Situation>{
         List<T> foundSituations = new ArrayList<T>();
 
         while(!this.success) {
-            if (this.closed.isEmpty()) {
-                System.out.println("is empty");
-                break;
-            } else {
+            if (this.closed.isEmpty()) break;
+            else {
                 this.current = this.closed.remove(0);
                 // uloží na konec
                 this.closed.addAll(this.open(current));

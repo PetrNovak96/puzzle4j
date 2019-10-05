@@ -1,6 +1,8 @@
 package eu.lidovydum.riddle4j.becky;
 
 import eu.lidovydum.riddle4j.becky.moves.Preleti;
+import eu.lidovydum.riddle4j.becky.rules.NeMinulyTah;
+import eu.lidovydum.riddle4j.becky.rules.NecoSeMusiPrelit;
 import eu.lidovydum.riddle4j.lib.Move;
 import eu.lidovydum.riddle4j.lib.Riddle;
 import eu.lidovydum.riddle4j.lib.Rule;
@@ -29,6 +31,9 @@ public class Becky extends Riddle<BeckySituace> {
     }
 
     protected Set<Rule> rules() {
-        return new HashSet<Rule>();
+        Set<Rule> set = new HashSet<Rule>();
+        set.add(new NecoSeMusiPrelit());
+        set.add(new NeMinulyTah());
+        return set;
     }
 }

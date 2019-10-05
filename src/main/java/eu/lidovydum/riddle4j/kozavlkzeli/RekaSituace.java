@@ -60,6 +60,6 @@ public class RekaSituace extends Situation {
 
     @Override
     public String toString() {
-        return "sedlak: " + sedlak + " koza: " + koza + " vlk: " + vlk + " zeli: " + zeli;
+        return sedlak + "" + koza + "" + vlk + "" + zeli;
     }
 }

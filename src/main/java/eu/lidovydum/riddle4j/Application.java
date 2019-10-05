@@ -1,9 +1,10 @@
 package eu.lidovydum.riddle4j;
 
 import eu.lidovydum.riddle4j.becky.Becky;
+import eu.lidovydum.riddle4j.becky.BeckySituace;
 import eu.lidovydum.riddle4j.kozavlkzeli.KozaVlkZeli;
 import eu.lidovydum.riddle4j.kozavlkzeli.RekaSituace;
-import eu.lidovydum.riddle4j.lib.Situation;
+import eu.lidovydum.riddle4j.lib.Visualiser;
 
 import java.util.List;
 
@@ -15,32 +16,24 @@ public class Application {
         koza();
     }
 
-    private static void becky() {
-        System.out.println("___BEČKY___\n");
-        Becky becky = new Becky();
-        List<Situation> found = becky.solve();
-        for (Situation situation : found) {
-            System.out.println(situation);
-            Situation previous = situation.getPrevious();
-            while(previous != null) {
-                System.out.println(previous);
-                previous = previous.getPrevious();
-            }
+    private static void koza() {
+        System.out.println("___Koza___\n");
+        KozaVlkZeli kozaVlkZeli = new KozaVlkZeli();
+        List<RekaSituace> found = kozaVlkZeli.solve();
+        for (RekaSituace situation : found) {
+            Visualiser<RekaSituace> visualiser = new Visualiser<RekaSituace>();
+            System.out.println(visualiser.visualise(situation));
         }
         System.out.println();
     }
 
-    private static void koza() {
-        System.out.println("___KOZA VLK ZELI___\n");
-        KozaVlkZeli kozaVlkZeli = new KozaVlkZeli();
-        List<Situation> found = kozaVlkZeli.solve();
-        for (Situation situation : found) {
-            System.out.println(situation);
-            RekaSituace rekaSituace = (RekaSituace) situation.getPrevious();
-            while(rekaSituace != null) {
-                System.out.println(rekaSituace);
-                rekaSituace = (RekaSituace) rekaSituace.getPrevious();
-            }
+    private static void becky() {
+        System.out.println("___BEČKY___\n");
+        Becky becky = new Becky();
+        List<BeckySituace> found = becky.solve();
+        for (BeckySituace situation : found) {
+            Visualiser<BeckySituace> visualiser = new Visualiser<BeckySituace>();
+            System.out.println(visualiser.visualise(situation));
         }
         System.out.println();
     }
