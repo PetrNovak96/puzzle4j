@@ -7,14 +7,6 @@
     <groupId>eu.lidovydum</groupId>
     <artifactId>riddle4j</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.reflections</groupId>
-            <artifactId>reflections</artifactId>
-            <version>0.9.11</version>
-        </dependency>
-    </dependencies>
     <build>
         <finalName>riddle4j</finalName>
     </build>
