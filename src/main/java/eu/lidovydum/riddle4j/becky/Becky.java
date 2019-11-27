@@ -1,8 +1,8 @@
 package eu.lidovydum.riddle4j.becky;
 
-import eu.lidovydum.riddle4j.becky.moves.Preleti;
+import eu.lidovydum.riddle4j.becky.moves.Preliti;
 import eu.lidovydum.riddle4j.becky.rules.NeMinulyTah;
-import eu.lidovydum.riddle4j.becky.rules.NecoSeMusiPrelet;
+import eu.lidovydum.riddle4j.becky.rules.NecoSeMusiPrelit;
 import eu.lidovydum.riddle4j.lib.Move;
 import eu.lidovydum.riddle4j.lib.Riddle;
 import eu.lidovydum.riddle4j.lib.Rule;
@@ -18,17 +18,17 @@ public class Becky extends Riddle<BeckySituace> {
     }
     protected Set<Move> moves() {
         Set<Move> set = new HashSet<Move>();
-        set.add(new Preleti(0,1));
-        set.add(new Preleti(0,2));
-        set.add(new Preleti(1,0));
-        set.add(new Preleti(1,2));
-        set.add(new Preleti(2,1));
-        set.add(new Preleti(2,0));
+        set.add(new Preliti(0,1));
+        set.add(new Preliti(0,2));
+        set.add(new Preliti(1,0));
+        set.add(new Preliti(1,2));
+        set.add(new Preliti(2,1));
+        set.add(new Preliti(2,0));
         return set;
     }
     protected Set<Rule> rules() {
         Set<Rule> set = new HashSet<Rule>();
-        set.add(new NecoSeMusiPrelet());
+        set.add(new NecoSeMusiPrelit());
         set.add(new NeMinulyTah());
         return set;
     }

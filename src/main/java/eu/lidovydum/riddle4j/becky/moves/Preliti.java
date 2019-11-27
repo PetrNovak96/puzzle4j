@@ -3,12 +3,12 @@ package eu.lidovydum.riddle4j.becky.moves;
 import eu.lidovydum.riddle4j.becky.BeckySituace;
 import eu.lidovydum.riddle4j.lib.Move;
 
-public class Preleti implements Move<BeckySituace> {
+public class Preliti implements Move<BeckySituace> {
 
     private int zdroj;
     private int cil;
 
-    public Preleti(int zdroj, int cil) {
+    public Preliti(int zdroj, int cil) {
         this.zdroj = zdroj;
         this.cil = cil;
     }

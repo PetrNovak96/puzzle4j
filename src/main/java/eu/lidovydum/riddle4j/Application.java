@@ -13,7 +13,7 @@ public class Application {
 
     public static void main(String[] args) {
         becky();
-        koza();
+       // koza();
     }
 
     private static void koza() {
@@ -28,12 +28,16 @@ public class Application {
     }
 
     private static void becky() {
+
+
         Becky becky = new Becky();
         List<BeckySituace> found = becky.solve();
         for (BeckySituace situation : found) {
             Visualiser<BeckySituace> visualiser = new Visualiser<BeckySituace>();
             System.out.println(visualiser.visualise(situation));
         }
-        System.out.println();
+
+
+
     }
 }

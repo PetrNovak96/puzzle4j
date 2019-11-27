@@ -39,7 +39,6 @@ public class BeckySituace extends Situation {
         BeckySituace situace = (BeckySituace) o;
         return Arrays.equals(getBecky(), situace.getBecky());
     }
-
     @Override
     public String toString() {
         return becky[0] + "" + becky[1] + "" + becky[2];
