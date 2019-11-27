@@ -28,7 +28,6 @@ public class Application {
     }
 
     private static void becky() {
-        System.out.println("___BEČKY___\n");
         Becky becky = new Becky();
         List<BeckySituace> found = becky.solve();
         for (BeckySituace situation : found) {

@@ -11,14 +11,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Becky extends Riddle<BeckySituace> {
-
-
     protected BeckySituace initialSituation() {
         BeckySituace situace = new BeckySituace();
         situace.setBecky(new int[]{8, 0, 0});
         return situace;
     }
-
     protected Set<Move> moves() {
         Set<Move> set = new HashSet<Move>();
         set.add(new Preleti(0,1));
@@ -29,7 +26,6 @@ public class Becky extends Riddle<BeckySituace> {
         set.add(new Preleti(2,0));
         return set;
     }
-
     protected Set<Rule> rules() {
         Set<Rule> set = new HashSet<Rule>();
         set.add(new NecoSeMusiPrelit());
