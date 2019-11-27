@@ -4,7 +4,7 @@ import eu.lidovydum.riddle4j.becky.BeckySituace;
 import eu.lidovydum.riddle4j.lib.Move;
 import eu.lidovydum.riddle4j.lib.Rule;
 
-public class NecoSeMusiPrelit implements Rule<BeckySituace> {
+public class NecoSeMusiPrelet implements Rule<BeckySituace> {
 
 
     public boolean suitsRule(BeckySituace situation, Move move) {
