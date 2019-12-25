@@ -1,4 +1,4 @@
-package eu.lidovydum.riddle4j.lib;
+package cz.vse._4iz430.novp19.riddle4j.lib;
 
 import java.util.ArrayList;
 import java.util.List;
