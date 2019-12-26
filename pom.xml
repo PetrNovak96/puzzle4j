@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cz.vse.4iz430.novp19</groupId>
-    <artifactId>riddle4j</artifactId>
+    <artifactId>puzzle4j</artifactId>
     <version>1.0.0</version>
     <build>
-        <finalName>riddle4j-${version}</finalName>
+        <finalName>puzzle4j-${version}</finalName>
     </build>
+
 
 
 </project>

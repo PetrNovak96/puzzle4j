@@ -1,4 +1,4 @@
-package cz.vse._4iz430.novp19.riddle4j;
+package cz.vse._4iz430.novp19.puzzle4j;
 
 public interface Rule<T extends Situation> {
 
