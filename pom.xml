@@ -6,9 +6,9 @@
 
     <groupId>cz.vse.4iz430.novp19</groupId>
     <artifactId>riddle4j</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <build>
-        <finalName>riddle4j</finalName>
+        <finalName>riddle4j-${version}</finalName>
     </build>
 
 

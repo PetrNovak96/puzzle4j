@@ -1,5 +1,4 @@
-package cz.vse._4iz430.novp19.riddle4j.lib;
-
+package cz.vse._4iz430.novp19.riddle4j;
 
 import java.util.ArrayList;
 import java.util.Collection;
